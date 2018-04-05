@@ -5,8 +5,8 @@ import storeFactory from "./Colors-Store-Action/Store_and_Reducers/Middleware"
 //import App from './Todo-Reduces-MiddleWare/app';
 
 
-//RESUME ON COLORS-STATE-ACTION REDUCERS TRYING TO MAKE A COLOR HIGHLIGHT METHOD
-//THEN ON PAGE 219
+//THEN ON PAGE 222
+//You just started making a UI and putting presentation comps there
 import registerServiceWorker from './registerServiceWorker';
 
 const store = storeFactory();

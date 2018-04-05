@@ -1,8 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
 import PropTypes from 'prop-types'
-import AddColorForm from './AddColorForm'
-import ColorList from './ColorList'
+import {NewColor} from './Container'
 //import { sortFunction } from '../lib/array-helpers'
 
 class App extends Component{
@@ -26,8 +25,7 @@ class App extends Component{
         const{colors} = this.props.store.getState()
         return(
             <div className="app">
-                <AddColorForm />
-                <ColorList colors={colors} />
+                <NewColor />
             </div>
         )
     }
@@ -38,3 +36,8 @@ App.childContextTypes = {
 }
 
 export default App
+
+{/* <div className="app">
+<AddColorForm />
+<ColorList colors={colors} />
+</div> */}

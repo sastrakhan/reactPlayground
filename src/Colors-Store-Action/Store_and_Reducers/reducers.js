@@ -36,9 +36,12 @@ export const colors = (state = [], action) => {
         //         c => color(c, action)
         //     )
         case C.HIGH_LIGHT_COLOR: 
-            return [
-                //FINISH HERE MAKING HIGHLIGHT COLOR
-            ]
+            var newColors = state.map(c => {if(c.id == action.id){
+                                        c.isHighLighted = true;
+                                        }
+                                        return c;
+            });
+            return newColors;
         case C.REMOVE_COLOR :
             return state.filter(
                 c => c.id !== action.id

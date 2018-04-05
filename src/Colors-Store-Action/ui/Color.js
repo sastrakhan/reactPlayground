@@ -1,6 +1,6 @@
 import React, { Component}  from 'react';
 import PropTypes from 'prop-types'
-import {removeColor} from './Actions'
+import {removeColor, highLightColor} from './Actions'
 
 export class Color extends Component {
 
@@ -18,6 +18,14 @@ export class Color extends Component {
                 }/>
                 <div className="color" style={{ backgroundColor: color}}>
                 </div>
+                {!color.isHighLighted &&
+                                    <h3>Is Highlighted</h3>             
+                }
+                   <button onClick={() => 
+                                        store.dispatch(
+                                            highLightColor(id)
+                                        )
+                                    }>Highlight</button>  
             </div>
         )
     }
