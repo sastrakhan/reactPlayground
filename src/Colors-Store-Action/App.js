@@ -4,40 +4,44 @@ import PropTypes from 'prop-types'
 import {NewColor} from './Container'
 //import { sortFunction } from '../lib/array-helpers'
 
-class App extends Component{
-    getChildContext(){
-        return{
-            store: this.props.store
-        }
-    }
 
-    componentWillMount(){
-        this.unsubscribe = this.props.store.subscribe(
-            () => this.forceUpdate()  //Forces UI to rerender on store change
-        )
-    }
+const App = () => (
+	<div className="app">
+		<NewColor />
+	</div>
+);
 
-    componentWillUnmount(){
-        this.unsubscribe(); //Stop listening to store because it's not the one making change but UI does
-    }
 
-    render(){
-        const{colors} = this.props.store.getState()
-        return(
-            <div className="app">
-                <NewColor />
-            </div>
-        )
-    }
-}
+//class App extends Component{
+//    getChildContext(){
+//        return{
+//            store: this.props.store
+//        }
+//    }
 
-App.childContextTypes = {
-    store: PropTypes.object.isRequired
-}
+//    componentWillMount(){
+//        this.unsubscribe = this.props.store.subscribe(
+//            () => this.forceUpdate()  //Forces UI to rerender on store change
+//        )
+//    }
+
+//    componentWillUnmount(){
+//        this.unsubscribe(); //Stop listening to store because it's not the one making change but UI does
+//    }
+
+//    render(){
+//        const{colors} = this.props.store.getState()
+//        return(
+//            <div className="app">
+//                <NewColor />
+//            </div>
+//        )
+//    }
+//}
+
+//App.childContextTypes = {
+//    store: PropTypes.object.isRequired
+//}
 
 export default App
 
-{/* <div className="app">
-<AddColorForm />
-<ColorList colors={colors} />
-</div> */}
