@@ -1,20 +1,17 @@
 import React, { Component}  from 'react';
 import PropTypes from 'prop-types'
-import {removeColor, highLightColor} from './Actions'
 
 export class Color extends Component {
 
     render(){
-        const {id, title, rating, color, onRate} = this.props;
+        const {id, title, highLightColor, color, removeColor} = this.props;
         const {store} = this.context;
 
         return(
             <div className="color" style={this.style}>
                 <h1 style={{backgroundColor: color}} ref="title">{title}</h1>
                 <button onClick={() => 
-                    store.dispatch(
-                        removeColor(id)
-                    )
+                        removeColor(id)         
                 }/>
                 <div className="color" style={{ backgroundColor: color}}>
                 </div>
@@ -22,9 +19,7 @@ export class Color extends Component {
                                     <h3>Is Highlighted</h3>             
                 }
                    <button onClick={() => 
-                                        store.dispatch(
-                                            highLightColor(id)
-                                        )
+                                        highLightColor(id)                                      
                                     }>Highlight</button>  
             </div>
         )
